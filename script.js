@@ -54,23 +54,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- SCROLL ANIMATION LOGIC ---
-    const selectorList = [
-        'section:not(:first-child)', 'main h1', 'main h2', 'main p',
-        'main blockquote', 'section.hanging-pictures .image', 'main form'
-    ];
-    const animatedElements = document.querySelectorAll(selectorList.join(', '));
-    if (animatedElements.length > 0) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
-        animatedElements.forEach(element => observer.observe(element));
-    }
+    // // --- SCROLL ANIMATION LOGIC ---
+    // const selectorList = [
+    //     'section:not(:first-child)', 'main h1', 'main h2', 'main p',
+    //     'main blockquote', 'section.hanging-pictures .image', 'main form'
+    // ];
+    // const animatedElements = document.querySelectorAll(selectorList.join(', '));
+    // if (animatedElements.length > 0) {
+    //     const observer = new IntersectionObserver((entries, observer) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.classList.add('is-visible');
+    //                 observer.unobserve(entry.target);
+    //             }
+    //         });
+    //     }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+    //     animatedElements.forEach(element => observer.observe(element));
+    // }
 
     
     // -----------------------------------------------------------------
