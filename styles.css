@@ -510,6 +510,7 @@ section.hanging-pictures {
   border-bottom-right-radius: 0;
   border-radius: calc(var(--border-radius-base) * 8);
   width: 100%;
+  z-index: -1;
   /* box-shadow: var(--box-shadow-base); */
 }
 
@@ -688,3 +689,14 @@ footer {
     border-color: #333;
   }
 } */
+
+
+footer {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.privacy-section{
+  box-shadow: none;
+}
