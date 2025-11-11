@@ -128,3 +128,97 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// Animation
+
+document.addEventListener('DOMContentLoaded', () => {
+  const pictures = document.querySelectorAll('.animate-picture');
+  const textSections = document.querySelectorAll('.animated-text-section');
+  const typewriters = document.querySelectorAll('.typewriter');
+
+  let lastScrollY = window.scrollY || 0;
+
+  function getVisiblePercent(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const topVisible = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+    return (topVisible > 0 ? (topVisible / rect.height) * 100 : 0);
+  }
+
+  // Picture animation logic with scroll direction and visibility thresholds
+  function animatePictures(scrollDown) {
+    pictures.forEach(picture => {
+      const section = picture.closest('section') || picture.parentElement;
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      if (scrollDown) {
+        // Scrolling down:
+        // Show when 33% of section enters from top
+        // Hide when top 66% of section scrolled past (out of viewport)
+        const topPercentVisible = ((rect.bottom - 0) / rect.height) * 100; // % of section below top of viewport (may be > 100)
+        if (topPercentVisible >= 33 && rect.top < windowHeight) {
+          picture.classList.add('active');
+          picture.classList.remove('fading-out');
+        } else if (rect.top < -0.66 * rect.height) { // top 66% out of view
+          picture.classList.add('fading-out');
+          picture.classList.remove('active');
+        }
+      } else {
+        // Scrolling up:
+        // Show when bottom 33% of section enters viewport
+        // Hide when bottom 66% is out of view (above viewport)
+        const bottomVisible = rect.bottom;
+        if (bottomVisible > windowHeight * (1 - 0.33) && bottomVisible <= windowHeight) {
+          picture.classList.add('active');
+          picture.classList.remove('fading-out');
+        } else if (bottomVisible <= windowHeight * (1 - 0.66)) {
+          picture.classList.add('fading-out');
+          picture.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  // Animate text sections once, slide/fade in from their alignment side
+  function animateTextSections() {
+    textSections.forEach(section => {
+      const visiblePercent = getVisiblePercent(section);
+      if (visiblePercent >= 33 && !section.classList.contains('active')) {
+        section.classList.add('active');
+        const heading = section.querySelector('.typewriter');
+        if (heading && !heading.classList.contains('typed')) {
+          // Restart typewriter animation reflow trick
+          heading.style.animation = 'none';
+          heading.offsetHeight; // reflow
+          heading.style.animation = null;
+          heading.classList.add('typed'); // mark so it doesn't repeat
+        }
+      }
+    });
+  }
+
+  // Main scroll handler
+  function onScroll() {
+    const currentScrollY = window.scrollY || 0;
+    const scrollDown = currentScrollY > lastScrollY;
+    animatePictures(scrollDown);
+    animateTextSections();
+    lastScrollY = currentScrollY;
+  }
+
+  // Initial run
+  onScroll();
+
+  // Debounce scroll events for performance
+  let scrollTimeout = null;
+  window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+      scrollTimeout = setTimeout(() => {
+        onScroll();
+        scrollTimeout = null;
+      }, 100);
+    }
+  });
+});
