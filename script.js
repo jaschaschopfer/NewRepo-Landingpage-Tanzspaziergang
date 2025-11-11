@@ -109,9 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (thankYouMessageElement) {
                         thankYouMessageElement.textContent = data.message; // Use message from server
                     }
-                    
                     thankYouSection.classList.add('visible');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
                     // On failure, show an alert with the error from the server
                     alert('Error: ' + data.message);
