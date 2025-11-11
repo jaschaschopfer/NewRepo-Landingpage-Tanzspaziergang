@@ -500,7 +500,7 @@ section.hanging-pictures {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-radius: calc(var(--border-radius-base) * 8);
-  box-shadow: var(--box-shadow-base);
+  box-shadow: none;
   margin-left: auto;
   margin-right: auto;
 }
@@ -510,7 +510,7 @@ section.hanging-pictures {
   border-bottom-right-radius: 0;
   border-radius: calc(var(--border-radius-base) * 8);
   width: 100%;
-  box-shadow: var(--box-shadow-base);
+  /* box-shadow: var(--box-shadow-base); */
 }
 
 
