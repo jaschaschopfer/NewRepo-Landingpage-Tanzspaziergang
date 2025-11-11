@@ -132,13 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Animation
 
+// Animation
+
 document.addEventListener('DOMContentLoaded', () => {
   const pictures = document.querySelectorAll('.animate-picture');
   const textSections = document.querySelectorAll('.animated-text-section');
   const typewriters = document.querySelectorAll('.typewriter');
 
-  let lastScrollY = window.scrollY || 0;
-
+  // Helper function to get visibility percentage (for text)
   function getVisiblePercent(el) {
     const rect = el.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -146,37 +147,44 @@ document.addEventListener('DOMContentLoaded', () => {
     return (topVisible > 0 ? (topVisible / rect.height) * 100 : 0);
   }
 
-  // Picture animation logic with scroll direction and visibility thresholds
-  function animatePictures(scrollDown) {
+  // --- NEW Picture animation logic ---
+  // This is now independent of scroll direction.
+  // It defines an "active zone" in the middle of the viewport.
+  function animatePictures() {
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
     pictures.forEach(picture => {
       const section = picture.closest('section') || picture.parentElement;
+      if (!section) return; // Skip if no parent section is found
+      
       const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.height === 0) return; // Skip invisible elements
 
-      if (scrollDown) {
-        // Scrolling down:
-        // Show when 33% of section enters from top
-        // Hide when top 66% of section scrolled past (out of viewport)
-        const topPercentVisible = ((rect.bottom - 0) / rect.height) * 100; // % of section below top of viewport (may be > 100)
-        if (topPercentVisible >= 33 && rect.top < windowHeight) {
-          picture.classList.add('active');
-          picture.classList.remove('fading-out');
-        } else if (rect.top < -0.66 * rect.height) { // top 66% out of view
-          picture.classList.add('fading-out');
-          picture.classList.remove('active');
-        }
+      // 1. measure height of section and take 33% of it.
+      const triggerAmount = rect.height * 0.33; // This is "TRIGGER33%" in pixels
+
+      // --- Define the "Active Zone" ---
+
+      // Condition 1: (Fade in when scrolling down)
+      // Section's top edge must be *above* the 33% mark from the bottom.
+      // (User: "if top edge of section is 'TRIGGER33%' above viewport bottom edge")
+      const topIsIn = rect.top < (windowHeight - triggerAmount);
+
+      // Condition 2: (Fade in when scrolling up)
+      // Section's bottom edge must be *below* the 33% mark from the top.
+      // (User: "if bottom edge of section is 'TRIGGER33%' below viewport top edge")
+      const bottomIsIn = rect.bottom > triggerAmount;
+
+      // The picture is "active" ONLY if *both* conditions are true.
+      // This creates a "middle" active zone.
+      if (topIsIn && bottomIsIn) {
+        // Fade In: The section is in the active zone.
+        picture.classList.add('active');
+        picture.classList.remove('fading-out');
       } else {
-        // Scrolling up:
-        // Show when bottom 33% of section enters viewport
-        // Hide when bottom 66% is out of view (above viewport)
-        const bottomVisible = rect.bottom;
-        if (bottomVisible > windowHeight * (1 - 0.33) && bottomVisible <= windowHeight) {
-          picture.classList.add('active');
-          picture.classList.remove('fading-out');
-        } else if (bottomVisible <= windowHeight * (1 - 0.66)) {
-          picture.classList.add('fading-out');
-          picture.classList.remove('active');
-        }
+        // Fade Out: The section is either too high or too low.
+        picture.classList.add('fading-out');
+        picture.classList.remove('active');
       }
     });
   }
@@ -201,11 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Main scroll handler
   function onScroll() {
-    const currentScrollY = window.scrollY || 0;
-    const scrollDown = currentScrollY > lastScrollY;
-    animatePictures(scrollDown);
+    // Scroll direction is no longer needed for the picture logic
+    animatePictures();
     animateTextSections();
-    lastScrollY = currentScrollY;
   }
 
   // Initial run
