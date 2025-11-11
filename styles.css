@@ -208,7 +208,7 @@ button:hover {
 }
 
 section {
-  padding: var(--spacing-base);
+  padding: calc(var(--spacing-base) * 1);
   margin-bottom: calc(var(--spacing-base) * 4);
   box-shadow: var(--box-shadow-base);
   border-radius: var(--border-radius-base);
@@ -448,10 +448,11 @@ section.newsletter-section {
 
 /* Hide the Thank You section by default */
 section.thank-you-section {
-    display: block; /* Keep display block so transitions work, but hide visually */
+    display: hidden; /* Keep display block so transitions work, but hide visually */
     opacity: 0;
     max-height: 0; /* Critical: Collapse the section to zero height */
     overflow: hidden;
+    margin: 0;
     padding-top: 0;
     padding-bottom: 0;
     background-color: var(--color-background-secondary);
@@ -462,9 +463,11 @@ section.thank-you-section {
 
 /* Class to reveal the Thank You section */
 section.thank-you-section.visible {
+    display: block; /* Ensure it's displayed */
     opacity: 1;
     max-height: 500px; /* Needs to be larger than the content's actual height */
     padding: var(--spacing-base); /* Restore the original padding */
+    margin-bottom: calc(var(--spacing-base) * 4);
 }
 
 /* Class to hide the Newsletter section */
@@ -490,20 +493,20 @@ section.hanging-pictures {
   justify-content: flex-end;
   align-items: center;
   max-width: 80%;
-  margin-inline-start: auto; /* Align to right */
+  /* margin-inline-start: auto; Align to right */
   padding: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-top-left-radius: calc(var(--border-radius-base) * 15);
-  border-bottom-left-radius: calc(var(--border-radius-base) * 15);
+  border-radius: calc(var(--border-radius-base) * 8);
   box-shadow: var(--box-shadow-base);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .image {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-top-left-radius: calc(var(--border-radius-base) * 15);
-  border-bottom-left-radius: calc(var(--border-radius-base) * 15);
+  border-radius: calc(var(--border-radius-base) * 8);
   width: 100%;
   box-shadow: var(--box-shadow-base);
 }
@@ -517,15 +520,38 @@ section.hanging-pictures {
 .introduction-section, .info-section, .statement-section {
   background-color: var(--color-background-secondary);
   max-width: 80%;
-  margin-inline-end: auto; /* Align to left */
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: calc(var(--border-radius-base) * 15);
-  border-bottom-right-radius: calc(var(--border-radius-base) * 15);
   box-shadow: var(--box-shadow-base);
 }
 
+.left-section {
+  margin-inline-end: auto; /* Align to left */
+  margin-inline-end: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: calc(var(--border-radius-base) * 8);
+  border-bottom-right-radius: calc(var(--border-radius-base) * 8);
+  padding-right: calc(var(--spacing-base) * 2);
+} 
+
+.right-section{
+  margin-inline-start: auto; /* Align to right */
+  margin-inline-end: 0;
+  border-top-left-radius: calc(var(--border-radius-base) * 8);
+  border-bottom-left-radius: calc(var(--border-radius-base) * 8);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: calc(var(--spacing-base) * 2);
+}
+
+
 /* End of Introduction Section Styles */
+
+
+.flex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-base);
+}
 
 
 /* Statement Section Styles */
