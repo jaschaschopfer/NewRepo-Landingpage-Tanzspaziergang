@@ -251,27 +251,6 @@ input[type="text"]:focus, input[type="email"]:focus {
 
 /* End of Global Styles */
 
-/* Banner Section Styles */
-.banner {
-  position: relative;
-  overflow: hidden;
-}
-.banner-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.banner-text {
-  position: absolute;
-  inset: auto 1rem 1rem 1rem; /* bottom overlay */
-  background: rgba(0,0,0,.5);
-  color: #fff;
-  padding: .75rem 1rem;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  line-height: 1.35;
-}
-
 
 /* Newsletter Section Styles */
 
@@ -588,8 +567,8 @@ footer {
     background-color: var(--color-background-secondary);
     padding: var(--spacing-base);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .social-media a {
@@ -603,6 +582,10 @@ footer {
 
 .social-media a:hover {
     color: var(--color-accent-secondary);
+}
+
+.privacy-section{
+  box-shadow: none;
 }
 
 
@@ -631,16 +614,20 @@ footer {
 /* --- IMAGE SCROLL ANIMATIONS --- */
 .animate-picture {
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.7s cubic-bezier(.62,.05,.46,1), transform 0.7s cubic-bezier(.62,.05,.46,1);
-  will-change: opacity, transform;
+  transform: scale(0.5);
+  border-radius: 50%;
+  transition: opacity 0.7s cubic-bezier(.62,.05,.46,1), transform 0.7s cubic-bezier(.62,.05,.46,1), border-radius 0.7s cubic-bezier(.62,.05,.46,1);
+  will-change: opacity, transform, border-radius;
 }
 .animate-picture.active {
   opacity: 1;
   transform: scale(1);
+  border-radius: calc(var(--border-radius-base) * 8);
 }
 .animate-picture.fading-out {
   opacity: 0;
+  transform: scale(0.5);
+  border-radius: 50%;
 }
 
 /* --- TEXT SECTION SLIDE/FADE IN ANIMATIONS --- */
@@ -691,12 +678,19 @@ footer {
 } */
 
 
-footer {
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
+/* End of Animation Styles */
+
+
+/* Media Queries for Desktop */
+
+@media (min-width: 1023px) {
+    body {
+      font-size: calc(var(--font-size-base) * 1.5);
+    }  
+
+    
+
+
 }
 
-.privacy-section{
-  box-shadow: none;
-}
+
