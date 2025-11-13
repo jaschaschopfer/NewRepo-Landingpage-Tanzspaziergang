@@ -1,3 +1,9 @@
+<?php
+// read banner text from a flat file
+$bannerFile = __DIR__ . '/banner.txt';
+$bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : '';
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -14,6 +20,14 @@
 <body>
 
 <main>
+
+<header>
+  <?php if ($bannerText !== ''): ?>
+    <section class="banner" role="region" aria-label="Aktuelle Mitteilung">
+      <div class="banner-text"><?= nl2br(htmlspecialchars($bannerText, ENT_QUOTES, 'UTF-8')) ?></div>
+    </section>
+  <?php endif; ?>
+</header>
 
   <section class="newsletter-section animated-text-section" id="top">
     <h1 class="typewriter">Erinnerung erhalten</h1>

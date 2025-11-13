@@ -752,3 +752,12 @@ footer {
   }
 
 
+.banner {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: calc(var(--spacing-base) / 2);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+}
+
