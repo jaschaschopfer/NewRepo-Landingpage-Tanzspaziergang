@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- DROPDOWN LOGIC ---
-    // This logic needs to apply to both forms on the page (top and bottom)
+    // This applies to both forms on the page (top and bottom)
     const allDropdownContainers = document.querySelectorAll('.checkbox-dropdown-container');
 
     allDropdownContainers.forEach(container => {
@@ -54,27 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // // --- SCROLL ANIMATION LOGIC ---
-    // const selectorList = [
-    //     'section:not(:first-child)', 'main h1', 'main h2', 'main p',
-    //     'main blockquote', 'section.hanging-pictures .image', 'main form'
-    // ];
-    // const animatedElements = document.querySelectorAll(selectorList.join(', '));
-    // if (animatedElements.length > 0) {
-    //     const observer = new IntersectionObserver((entries, observer) => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                 entry.target.classList.add('is-visible');
-    //                 observer.unobserve(entry.target);
-    //             }
-    //         });
-    //     }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
-    //     animatedElements.forEach(element => observer.observe(element));
-    // }
-
     
     // -----------------------------------------------------------------
-    // --- NEW: FORM SUBMISSION (AJAX with Fetch) ---
+    // --- FORM SUBMISSION (AJAX with Fetch) ---
     // -----------------------------------------------------------------
     const allForms = document.querySelectorAll('.newsletter-form');
     const thankYouSection = document.querySelector('.thank-you-section');
@@ -102,19 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     // On success, hide both form sections and show the thank you message
                     document.querySelectorAll('.newsletter-section').forEach(section => {
                         section.classList.add('hidden');
+                        window.scrollTo(0, 0); // Scroll to top
                     });
                     
-                    // --- NEW: Update the thank you message dynamically ---
+                    // --- Update the thank you message dynamically ---
                     const thankYouMessageElement = thankYouSection.querySelector('h2');
                     if (thankYouMessageElement) {
                         thankYouMessageElement.textContent = data.message; // Use message from server
                     }
+                    window.scrollTo(0, 0); // Scroll to top
                     thankYouSection.classList.add('visible');
                 } else {
                     // On failure, show an alert with the error from the server
                     alert('Error: ' + data.message);
                     submitButton.textContent = originalButtonText;
                     submitButton.disabled = false;
+                    window.scrollTo(0, 0); // Scroll to top
                 }
             })
             .catch(error => {
@@ -129,9 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Animation
-
-// Animation
+// Animation for Scroll Effects
 
 document.addEventListener('DOMContentLoaded', () => {
   const pictures = document.querySelectorAll('.animate-picture');
@@ -146,9 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return (topVisible > 0 ? (topVisible / rect.height) * 100 : 0);
   }
 
-  // --- NEW Picture animation logic ---
-  // This is now independent of scroll direction.
-  // It defines an "active zone" in the middle of the viewport.
+  // --- Picture animation logic ---
+  // Independent of scroll direction, defines an "active zone" in the middle of the viewport.
   function animatePictures() {
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
