@@ -128,14 +128,14 @@
 
 :root {
   /* BACKGROUNDS & NEUTRALS */
-  --color-background-primary: #AABFD1;     /* Stage Fog Blue (Your Flyer BG) */
+  --color-background-primary: #AABFD1;     /* Stage Fog Blue */
   --color-background-secondary: #F5F5F5;   /* Ivory/Soft White (For Content Boxes) */
   --color-text-dark: #2E3A47;              /* Deep Charcoal (Main body text) */
   --color-text-light: #FFFFFF;             /* White (For text on dark backgrounds) */
   
   /* BRAND ACCENTS (THEATRICAL) */
-  --color-accent-primary: #7C3E67;         /* Rich Plum/Burgundy (Major Headlines, Menu) */
-  --color-accent-secondary: #D4A017;       /* Antique Gold/Mustard (CTAs, Spotlight/Highlight) */
+  --color-accent-primary: #7C3E67;         /* Rich Plum/Burgundy */
+  --color-accent-secondary: #D4A017;       /* Antique Gold/Mustard */
 }
 
 /* Typography */
@@ -314,6 +314,13 @@ section.newsletter-section {
 
 .subscription-checkbox label {
   font-weight: var(--font-weight-regular);
+}
+
+p#acknowledge {
+  font-size: 0.8rem;
+  color: var(--color-text-dark);
+  margin-top: calc(var(--spacing-base) / 2);
+  text-align: left;
 }
 
 
