@@ -207,14 +207,14 @@ button {
   border-radius: var(--border-radius-base);
   padding: calc(var(--spacing-base) / 2) var(--spacing-base);
   cursor: pointer;
-  box-shadow: var(--box-shadow-base);
+  /* box-shadow: var(--box-shadow-base); */
   transition: background-color var(--transition-duration) , box-shadow var(--transition-duration), transform var(--transition-duration);
 }
 
 button:hover {
   background-color: var(--color-accent-primary);
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
 
 }
 
@@ -235,13 +235,16 @@ p:hover {
   color: var(--color-accent-primary);
 }
 
+
+section.newsletter-section>h1>p {
+  max-width: 400px;
+}
+
 /* for checkboxes, text inputs */
 
 input[type="checkbox"] {
     appearance: auto;
     accent-color: var(--color-accent-primary);
-    width: 1.2em;
-    height: 1.2em;
     cursor: pointer;
 }
 input[type="checkbox"]:hover {
@@ -283,6 +286,10 @@ section.newsletter-section {
     text-align: center;
 }
 
+.newsletter-section p {
+      max-width: 400px;
+    }
+
 .credentials-box {
     max-width: 400px;
     margin: 0 auto;
@@ -307,7 +314,7 @@ section.newsletter-section {
 
 .newsletter-form button {
     font-size: 1rem;
-    margin-top: var(--spacing-base);
+    /* margin-top: var(--spacing-base); */
 }
 
 .subscription-checkbox label {
@@ -315,7 +322,7 @@ section.newsletter-section {
 }
 
 p.acknowledge {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-text-dark);
   margin-top: calc(var(--spacing-base) / 2);
   text-align: left;
@@ -710,15 +717,16 @@ footer {
 
 @media (min-width: 1023px) {
     body {
-      font-size: calc(var(--font-size-base) * 1.5);
-      background-color: var(--color-background-secondary);
+      font-size: calc(var(--font-size-base) * 1.2);
+      background-color: var(--color-background-primary);
     } 
     
     main {
-      max-width: 960px;
+      /* max-width: 960px; */
       margin-left: auto;
       margin-right: auto;
       background-color: var(--color-background-primary);
+
     }
 
     .image {
@@ -732,11 +740,15 @@ footer {
 
     section.hanging-pictures {
       justify-content: center;
+      max-width: 40%;
     }
 
     .introduction-section, .info-section, .statement-section {
       box-shadow: none;
+      max-width: 50%;
     }
+
+  }
 
 }
 

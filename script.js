@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
         function updateButtonText() {
             const checkedCount = dropdownList.querySelectorAll('input[type="checkbox"]:checked').length;
             if (checkedCount === 0) {
-                toggleButton.textContent = 'Termine auswählen';
+                toggleButton.textContent = 'Vorstellungen auswählen';
             } else if (checkedCount === 1) {
-                toggleButton.textContent = '1 Termin ausgewählt';
+                toggleButton.textContent = '1 Vorstellung ausgewählt';
             } else {
-                toggleButton.textContent = `${checkedCount} Termine ausgewählt`;
+                toggleButton.textContent = `${checkedCount} Vorstellungen ausgewählt`;
             }
         }
 
