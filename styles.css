@@ -314,7 +314,7 @@ section.newsletter-section {
   font-weight: var(--font-weight-regular);
 }
 
-p#acknowledge {
+p.acknowledge {
   font-size: 0.8rem;
   color: var(--color-text-dark);
   margin-top: calc(var(--spacing-base) / 2);
