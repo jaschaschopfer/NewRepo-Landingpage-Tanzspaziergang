@@ -82,8 +82,8 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
   </section>
 
   <section class="thank-you-section animated-text-section">
-    <h2><span class="typewriter">Vielen Dank für Ihre Anmeldung!</span></h2>
-    <p>Wir freuen uns, Sie bei unseren Tanzspaziergängen begrüßen zu dürfen.</p>
+    <h2><span class="typewriter">Erinnerung eingerichtet!</span></h2>
+    <p>Wir freuen uns, Sie bald begrüssen zu dürfen.</p>
   </section>
 
   <section class="hanging-pictures right">
@@ -133,7 +133,7 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
       <img src="assets/images/dance1.jpg" alt="Was Teilnehmer sagen" class="quote-image">
       <p>Christina Schopfer, Projektleiterin</p>
        </div>
-       <p class="quote-text">Tanz erscheint nicht auf der Bühne, sondern mitten im Gehen, im Wind, im Atem. Mich interessiert, wie Bewegung entsteht, wenn wir Raum teilen – mit der Umgebung, mit anderen, mit uns selbst. Es geht nicht um ein Spektakel, sondern um Wahrnehmung: um das Lauschen, das Schauen, das Staunen unterwegs.“</p>
+       <p class="quote-text">«Tanz erscheint nicht auf der Bühne, sondern mitten im Gehen, im Wind, im Atem. Mich interessiert, wie Bewegung entsteht, wenn wir Raum teilen – mit der Umgebung, mit anderen, mit uns selbst. Es geht nicht um ein Spektakel, sondern um Wahrnehmung: um das Lauschen, das Schauen, das Staunen unterwegs.»</p>
    
   </section>
 

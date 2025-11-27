@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $pdo->commit();
 
-        $message = $isNewUser ? 'Vielen Dank für Ihre Anmeldung!' : 'Ihre Einstellungen wurden erfolgreich aktualisiert!';
+        $message = $isNewUser ? 'Vielen Dank für Ihre Anmeldung!' : 'Ihre Daten wurden erfolgreich aktualisiert!';
         echo json_encode(['success' => true, 'message' => $message]);
 
     } catch (PDOException $e) {
