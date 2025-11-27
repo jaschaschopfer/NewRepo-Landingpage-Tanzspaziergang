@@ -1,6 +1,6 @@
 # Unterwegs – Landing Page für Tanzspaziergang
 
-Dieses Repository enthält eine responsive Landing Page für „Unterwegs“, eine Reihe geführter Tanzspaziergänge, die Bewegung und Natur an mehreren Terminen im Jahr 2026 verbinden. Die Seite fokussiert sich auf die Anmeldung zu Erinnerungs-E-Mails für ausgewählte Vorstellungen sowie eine optionale Anmeldung für zukünftige Veranstaltungen, eingebettet in ein flüssiges, flussiges Scrolling-Erlebnis.
+Dieses Repository enthält eine responsive Landing Page für „Unterwegs“, eine Reihe geführter Tanzspaziergänge, die Bewegung und Natur an mehreren Terminen im Jahr 2026 verbinden. Die Seite fokussiert sich auf die Anmeldung zu Erinnerungs-E-Mails für ausgewählte Vorstellungen sowie eine optionale Anmeldung für zukünftige Veranstaltungen, eingebettet in ein flüssiges Scrolling-Erlebnis.
 
 ## Projektbeschreibung
 
