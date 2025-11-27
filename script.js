@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = section.getBoundingClientRect();
       if (rect.height === 0) return; // Skip invisible elements
 
-      // 1. measure height of section and take 50% of it.
-      const triggerAmount = rect.height * 0.5; // This is "TRIGGER33%" in pixels
+      // 1. measure height of section and take 33% of it.
+      const triggerAmount = rect.height * 0.33; // This is "TRIGGER33%" in pixels
 
       // --- Define the "Active Zone" ---
 
