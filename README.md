@@ -1,3 +1,5 @@
+
+
 # Unterwegs – Landing Page für Tanzspaziergang
 
 Dieses Repository enthält eine responsive Landing Page für „Unterwegs“, eine Reihe geführter Tanzspaziergänge, die Bewegung und Natur an mehreren Terminen im Jahr 2026 verbinden. Die Seite fokussiert sich auf die Anmeldung zu Erinnerungs-E-Mails für ausgewählte Termine sowie eine optionale Anmeldung für zukünftige Veranstaltungen, eingebettet in ein flüssiges, filmisches Scrolling-Erlebnis.
@@ -134,3 +136,38 @@ CREATE TABLE `selected_dates` (
   CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   UNIQUE KEY `user_event_unique` (`user_id`, `event_date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+### Daten-Export
+Hier ist die Kurzanleitung auf Deutsch, passend zu deinen Screenshots:
+
+### **Schritt 1: SQL-Abfrage ausführen**
+
+1.  Klicke in phpMyAdmin auf den Reiter **SQL**.
+2.  Füge den folgenden Code in das Textfeld ein. **Wichtig:** Ersetze `'2026-05-01'` durch das Datum, das du abfragen möchtest.
+    ```sql
+    SELECT DISTINCT users.name, users.email
+    FROM users
+    JOIN selected_dates ON users.id = selected_dates.user_id
+    WHERE selected_dates.event_date = '2026-05-01'
+    ```
+3.  Klicke rechts unten auf **OK**.
+
+> **Tipp (Speichern):** Damit du den Code nicht immer neu tippen musst, gib unten bei **"SQL-Abfrage speichern"** einen Namen ein (z. B. "Suche nach Datum") und klicke auf "OK". Beim nächsten Mal findest du dies direkt im Bereich "Gespeicherte SQL-Abfrage".
+
+-----
+
+### **Schritt 2: Ergebnisse exportieren**
+
+1.  Die Seite zeigt nun die Liste der Namen und E-Mails für das gewählte Datum an.
+2.  Scrolle unter die Tabelle zum Kasten **"Operationen für das Abfrageergebnis"**.
+3.  Klicke auf den Link **Exportieren**.
+
+-----
+
+### **Schritt 3: Als CSV herunterladen**
+
+1.  Du befindest dich nun im Export-Menü.
+2.  Wähle im Dropdown-Menü bei **Format** die Option **CSV for MS Excel**.
+3.  Klicke auf **OK**, um die Datei herunterzuladen.
+
+> **Tipp (Vorlage):** Wenn du spezielle Einstellungen vornimmst (z. B. unter "Angepasst"), kannst du diese oben bei **"Neue Vorlage"** benennen und auf **"Anlegen"** klicken. Beim nächsten Export wählst du einfach diese Vorlage aus, um Zeit zu sparen.
