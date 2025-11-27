@@ -14,6 +14,13 @@ Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplat
 - Die Seite nutzt Playfair Display, Poppins und Baumans als Webfonts, um eine Mischung aus theatralischem Ausdruck und guter Lesbarkeit zu erreichen.
 - Die Seite verlinkt auf eine separate `privacy.html`, in der die Datenschutzerklärung hinterlegt ist; im Formular wird explizit darauf hingewiesen.
 
+Mobile:
+<img width="329" height="715" alt="Bildschirmfoto 2025-11-27 um 16 38 42" src="https://github.com/user-attachments/assets/4a52479a-0419-41f3-8a2e-0b599621cf74" />
+
+Desktop:
+<img width="1507" height="805" alt="Bildschirmfoto 2025-11-27 um 16 39 43" src="https://github.com/user-attachments/assets/98e240ca-2889-4915-bf15-fffbbfc40b8e" />
+
+
 ### Backend
 
 - In `db_config.php` (separat anlegen, nicht im Repo enthalten) die eigenen Datenbank-Zugangsdaten (Server, Benutzername, Passwort, Datenbankname) eintragen; die Verbindung erfolgt per PDO mit UTF‑8-Unterstützung und Fehlerbehandlung.
