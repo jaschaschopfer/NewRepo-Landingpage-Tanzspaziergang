@@ -4,7 +4,7 @@ Dieses Repository enthält eine responsive Landing Page für „Unterwegs“, ei
 
 ## Projektbeschreibung
 
-Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplattform für den Tanzspaziergang „Unterwegs“. Sie besteht aus zwei identischen Anmeldebereichen (oben und unten), mehreren Informationssektionen, atmosphärischen Bildbereichen sowie einem dynamischen Hinweisbanner, das über ein kleines Admin-Interface gepflegt werden kann und aktuelle Infos (z. B. Wetterentscheidungen) anzeigt. Nutzer*innen wählen ihre Wunschvorstellungen über ein benutzerdefiniertes Checkbox-Dropdown, tragen Name und E-Mail ein und senden das Formular, das per PHP-Backend in einer MySQL-Datenbank gespeichert wird.
+Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplattform für den Tanzspaziergang „Unterwegs“. Sie besteht aus zwei identischen Anmeldebereichen (oben und unten), mehreren Informationssektionen, atmosphärischen Bildbereichen sowie einem dynamischen Hinweisbanner, das über ein kleines Admin-Interface gepflegt werden kann und aktuelle Infos (z. B. ob die Vorstellung am selben Tag stattfindet (wetterabhängig)) anzeigt. Nutzer*innen wählen die gewünschten Vorstellungsdaten über ein benutzerdefiniertes Checkbox-Dropdown, tragen Name und E-Mail ein und senden das Formular, das per PHP-Backend in einer MySQL-Datenbank gespeichert wird.
 
 ## Setup und Installation
 
@@ -16,9 +16,9 @@ Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplat
 
 ### Backend
 
-- In `db_config.php` (separat, nicht im Repo-Auszug gezeigt) die eigenen Datenbank-Zugangsdaten (Server, Benutzername, Passwort, Datenbankname) eintragen; die Verbindung erfolgt per PDO mit UTF‑8-Unterstützung und Fehlerbehandlung.
-- `submit_form.php` auf einem Server mit PHP-Unterstützung bereitstellen; das Script bindet die DB-Konfiguration ein, validiert die POST-Daten und liefert JSON-Antworten für das Frontend.
-- `admin.php` zum Verwalten des Hinweisbanners deployen; diese Seite ist mit Passwortschutz (über `password.php`), CSRF-Token und Honeypot-Feld abgesichert und schreibt den Bannertext in eine Datei `banner.txt`.
+- In `db_config.php` (separat anlegen, nicht im Repo enthalten) die eigenen Datenbank-Zugangsdaten (Server, Benutzername, Passwort, Datenbankname) eintragen; die Verbindung erfolgt per PDO mit UTF‑8-Unterstützung und Fehlerbehandlung.
+- `submit_form.php` auf einem Server mit PHP-Unterstützung anlegen; das Script bindet die DB-Konfiguration ein, validiert die POST-Daten und liefert JSON-Antworten für das Frontend.
+- `admin.php` zum Verwalten des Hinweisbanners anlegen; diese Seite ist mit Passwortschutz (über `password.php`), CSRF-Token und Honeypot-Feld abgesichert und schreibt den Bannertext in eine Datei `banner.txt`.
 - In der Datenbank Tabellen für `users` und `selecteddates` anlegen, die zu den INSERT-Statements in `submit_form.php` passen (inkl. `subscribedtoupdates`-Feld und Fremdschlüsselbeziehung).
 
 ### Projekt starten
@@ -41,8 +41,8 @@ Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplat
 - Weitere Inhaltsbereiche:
   - Einführungssektion mit Erläuterung des Formats (Spaziergang in Begleitung von Tanz und Musik, Dauer, Ort Utzigen etc.).
   - Info-Sektion mit klaren Blöcken „Wo?“, „Wann?“, „Weiteres“ inkl. Anreise, Wetterabhängigkeit und rechtlichen Hinweisen (Versicherung, Barrierefreiheit).
-  - Statement-/Zitatbereich mit Foto und Text von Projektleitung Christina Schöpfer.
-  - Mehrere „hanging pictures“-Bildbereiche (vier Bilder), die abwechselnd links und rechts zu den Textkarten platziert sind.
+  - Statement-/Zitatbereich mit Foto und Text von Projektleitung Christina Schopfer.
+  - Mehrere „hanging pictures“-Bildbereiche (vier Bilder)
 - Footer:
   - Link zur Datenschutzerklärung (`privacy.html`).
   - Instagram-Link mit inline SVG-Icon.
@@ -80,7 +80,7 @@ Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplat
 
 - Bild-Animationen:
   - Alle `.animate-picture`-Elemente werden über eine eigene Logik animiert, die eine „aktive Zone“ in der Mitte des Viewports definiert.
-  - Ein Bild wird aktiv, wenn sowohl die Oberkante des zugehörigen Abschnitts einen bestimmten Abstand unterhalb des Viewport-Oberrands als auch die Unterkante einen bestimmten Abstand oberhalb des Viewport-Unterrands einnimmt; so entsteht eine mittige Zone, in der das Bild „poppt“.
+  - Die Animation wird aktiv, sobald mindestens 33% des Abschnitts im sichtbaren Bereich (Viewport) sind. Sobald weniger als 33% sichtbar sind – egal ob beim Hoch- oder Runterscrollen – wird die das Bild ausgeblendet (Fade-Out).
   - Die Logik ist explizit unabhängig von der Scrollrichtung – Bilder werden beim Hineinscrollen sowohl von oben als auch von unten in diese Zone animiert (Ein- und Ausblenden über `.active` und `.fading-out`).
 - Text-Animationen:
   - `.animated-text-section`-Elemente werden anhand eines berechneten Sichtbarkeitsprozents animiert; ab ca. einem Drittel Sichtbarkeit wird die Klasse `.active` gesetzt, was einen Slide/Fade-in von der jeweiligen Seite auslöst.
@@ -141,7 +141,7 @@ Die Website ist als Onepager konzipiert und dient als Marketing- und Anmeldeplat
 
 
 ### Daten-Export
-Um die Daten für den E-Mail-Versand zu exportieren, gehst du wie folgt vor:
+Um die Daten für den E-Mail-Versand zu exportieren, kann wie folgt vorgegangen werden:
 
 ### **Schritt 1: SQL-Abfrage ausführen**
 
