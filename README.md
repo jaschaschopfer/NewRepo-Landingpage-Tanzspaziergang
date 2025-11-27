@@ -201,7 +201,7 @@ Um die Daten für den E-Mail-Versand zu exportieren, kann wie folgt vorgegangen 
 - Sicherheits-Features wie Honeypot und CSRF-Token
 - Javascript Scroll-Tracker
 
-### 
+### Ressourcen
 - Gemini
 - ChatGPT
 - Perplexity
