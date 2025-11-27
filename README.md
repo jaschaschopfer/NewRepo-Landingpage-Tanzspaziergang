@@ -149,7 +149,7 @@ Desktop:
 | Backend   | PDO-basierte MySQL-Anbindung, transaktionale Verarbeitung von Nutzer*innen und Terminen, JSON-API, Admin-Interface für Bannerpflege mit Passwort-/CSRF-/Honeypot-Schutz sowie separate Datenschutzerklärungsseite. |
 
 
-### Daten-Export
+## Daten-Export
 Um die Daten für den E-Mail-Versand zu exportieren, kann wie folgt vorgegangen werden:
 
 ### **Schritt 1: SQL-Abfrage ausführen**
@@ -189,3 +189,18 @@ Um die Daten für den E-Mail-Versand zu exportieren, kann wie folgt vorgegangen 
 3.  Klicke auf **OK**, um die Datei herunterzuladen.
 
 > **Tipp (Vorlage):** Wenn du spezielle Einstellungen vornimmst (z. B. unter "Angepasst"), kannst du diese oben bei **"Neue Vorlage"** benennen und auf **"Anlegen"** klicken. Beim nächsten Export wählst du einfach diese Vorlage aus, um Zeit zu sparen.
+
+## Reflexion
+### Schwierigkeiten
+- Zuerst wollten wir einen Pfad mit Fussspuren animieren. Daran scheiterten wir auch mit Hilfe von KI und vielen Prompts. Nach erneutem Animations-Brainstorming kamen wir zum neuen Konzept mit den mittig erscheinenden Bildern.
+- gitignore hat nicht immer richtig funktioniert und dadurch gerieten die ersten Zugangsdaten zur Datenbank auf Github. Daher mussten wir das Repository neu erstellen, nachdem wir die Passwörter geändert haben.
+
+### Learnings
+- Scrollytelling mit CSS-Animationen
+- Mini-Backend für Admin mit Passwortschutz
+- Sicherheits-Features wie Honeypot und CSRF-Token
+- Javascript Scroll-Tracker
+
+
+
+
