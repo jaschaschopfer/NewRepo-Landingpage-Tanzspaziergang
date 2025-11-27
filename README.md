@@ -138,7 +138,7 @@ CREATE TABLE `selected_dates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ### Daten-Export
-Hier ist die Kurzanleitung auf Deutsch, passend zu deinen Screenshots:
+Um die Daten für den E-Mail-Versand zu exportieren, gehst du wie folgt vor:
 
 ### **Schritt 1: SQL-Abfrage ausführen**
 
