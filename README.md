@@ -142,6 +142,8 @@ Hier ist die Kurzanleitung auf Deutsch, passend zu deinen Screenshots:
 
 ### **Schritt 1: SQL-Abfrage ausführen**
 
+<img width="1506" height="807" alt="Bildschirmfoto 2025-11-27 um 14 29 06" src="https://github.com/user-attachments/assets/4d5d8f78-2d44-4e4a-8245-f22a0d911005" />
+
 1.  Klicke in phpMyAdmin auf den Reiter **SQL**.
 2.  Füge den folgenden Code in das Textfeld ein. **Wichtig:** Ersetze `'2026-05-01'` durch das Datum, das du abfragen möchtest.
     ```sql
@@ -158,6 +160,8 @@ Hier ist die Kurzanleitung auf Deutsch, passend zu deinen Screenshots:
 
 ### **Schritt 2: Ergebnisse exportieren**
 
+<img width="1510" height="736" alt="Bildschirmfoto 2025-11-27 um 14 33 52" src="https://github.com/user-attachments/assets/d0f7d84c-40ce-49b0-a528-6c2a63ccccae" />
+
 1.  Die Seite zeigt nun die Liste der Namen und E-Mails für das gewählte Datum an.
 2.  Scrolle unter die Tabelle zum Kasten **"Operationen für das Abfrageergebnis"**.
 3.  Klicke auf den Link **Exportieren**.
@@ -165,6 +169,8 @@ Hier ist die Kurzanleitung auf Deutsch, passend zu deinen Screenshots:
 -----
 
 ### **Schritt 3: Als CSV herunterladen**
+
+<img width="1507" height="806" alt="Bildschirmfoto 2025-11-27 um 14 44 20" src="https://github.com/user-attachments/assets/dcd392ab-d7b2-4355-9b24-2be49ae63ea7" />
 
 1.  Du befindest dich nun im Export-Menü.
 2.  Wähle im Dropdown-Menü bei **Format** die Option **CSV for MS Excel**.
