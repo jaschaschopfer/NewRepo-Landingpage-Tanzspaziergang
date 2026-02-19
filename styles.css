@@ -54,6 +54,7 @@
   line-height: inherit;
   text-align: start;
   touch-action: manipulation;
+  
 }
 
 :where(button) {
@@ -117,38 +118,73 @@
 
 :root {
   /* BACKGROUNDS & NEUTRALS */
-  --color-background-primary: #AABFD1;     /* Stage Fog Blue */
-  --color-background-secondary: #F5F5F5;   /* Ivory/Soft White (For Content Boxes) */
-  --color-text-dark: #2E3A47;              /* Deep Charcoal (Main body text) */
-  --color-text-light: #FFFFFF;             /* White (For text on dark backgrounds) */
+  --color-background-secondary: #7c99b4;     /* Stage Fog Blue */
+  --color-background-primary: #F5F5F5;   /* Ivory/Soft White (For Content Boxes) */
+  --color-text-dark: #ffffff;              /* Deep Charcoal (Main body text) */
+  --color-text-light: #000000;             /* White (For text on dark backgrounds) */
   
   /* BRAND ACCENTS (THEATRICAL) */
-  --color-accent-primary: #7C3E67;         /* Rich Plum/Burgundy */
-  --color-accent-secondary: #D4A017;       /* Antique Gold/Mustard */
-}
+  --color-accent-primary: #ffffff;         /* Rich Plum/Burgundy */
+  --color-accent-secondary: #eebd40;       /* Antique Gold/Mustard */
 
-/* Typography */
 
-:root {
   /* FONT FAMILIES */
-  --font-family-header: 'Baumans', sans-serif; /* Theatrical, expressive headlines (H1, H2) */
-  --font-family-body: 'Poppins', sans-serif;       /* Clean, readable text (Paragraphs, navigation, buttons) */
+  --font-family-body: 'TT Travels Trial', sans-serif;
+  --font-family-header: 'TT Travels Trial', sans-serif;
   
   /* FONT WEIGHTS */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-}
+  --font-weight-extrabold: 800;
 
-:root {
-  --font-family-base: 'Helvetica Neue', Arial, sans-serif;
+  /* SPACING & SIZING */
     --font-size-base: 16px;
     --line-height-base: 1.5;
     --spacing-base: 1rem;
     --border-radius-base: 4px;
     --transition-duration: 0.3s;
     --box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: 'TT Travels Trial'; /* Dieser Name wird später benutzt */
+  src: url('assets/fonts/TT Travels Trial Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400; /* Regular */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Travels Trial'; /* Dieser Name wird später benutzt */
+  src: url('assets/fonts/TT Travels Trial Medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500; /* Medium */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Travels Trial'; /* Dieser Name wird später benutzt */
+  src: url('assets/fonts/TT Travels Trial Semibold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 600; /* Semibold */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Travels Trial'; /* Dieser Name wird später benutzt */
+  src: url('assets/fonts/TT Travels Trial Bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700; /* Bold */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Travels Trial'; /* Dieser Name wird später benutzt */
+  src: url('assets/fonts/TT Travels Trial ExtraBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 800; /* Extra Bold */
 }
 
 /* Global Styles */
@@ -170,8 +206,21 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-header);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
   color: var(--color-accent-primary);
-  margin-bottom: calc(var(--spacing-base) / 2);
+}
+
+h1 {
+    font-size: 1.48rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.3rem;
 }
 
 a {
@@ -181,10 +230,6 @@ a {
 }
 
 a:hover {
-  color: darken(var(--color-accent-secondary), 10%);
-}
-
-li:hover {
   color: var(--color-accent-primary);
 }
 
@@ -196,15 +241,22 @@ button {
   border-radius: var(--border-radius-base);
   padding: calc(var(--spacing-base) / 2) var(--spacing-base);
   cursor: pointer;
+  height: fit-content;
+
   /* box-shadow: var(--box-shadow-base); */
   transition: background-color var(--transition-duration) , box-shadow var(--transition-duration), transform var(--transition-duration);
 }
 
-button:hover {
+button[type="submit"]:hover {
   background-color: var(--color-accent-primary);
   transform: scale(1.05);
-  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+}
 
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
 }
 
 section {
@@ -219,11 +271,6 @@ p {
   margin-bottom: var(--spacing-base);
   transition: color var(--transition-duration);
 }
-
-p:hover {
-  color: var(--color-accent-primary);
-}
-
 
 section.newsletter-section>h1>p {
   max-width: 400px;
@@ -250,7 +297,10 @@ input[type="text"], input[type="email"] {
     box-sizing: border-box;
     margin-bottom: var(--spacing-base);
 }
-input[type="text"]:focus, input[type="email"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="text"]:hover,
+input[type="email"]:hover { 
     border-color: var(--color-accent-primary);
     outline: none;
     box-shadow: 0 0 5px var(--color-accent-primary);
@@ -267,12 +317,12 @@ section.newsletter-section {
     flex-direction: column;
     align-items: center;
     margin-top: 0;
-}
+    position: relative;
+    z-index: 10;
 
-.newsletter-section h1 {
-    font-size: 2rem;
-    margin-bottom: calc(var(--spacing-base) * 1.5);
-    text-align: center;
+    /* Abrundung der unteren Ecken */
+    border-bottom-left-radius: calc(var(--border-radius-base) * 8);
+    border-bottom-right-radius: calc(var(--border-radius-base) * 8);
 }
 
 .newsletter-section p {
@@ -287,7 +337,6 @@ section.newsletter-section {
 .date-selection {
     max-width: 400px;
     margin: 0 auto;
-    margin-top: var(--spacing-base);
 }
 
 .newsletter-form label {
@@ -329,7 +378,7 @@ p.acknowledge {
 
 .dropdown-toggle {
     font-family: var(--font-family-body);
-    background-color: var(--color-background-secondary);
+    background-color: transparent;
     color: var(--color-text-dark);
     border: 1px solid #ccc;
     border-radius: var(--border-radius-base);
@@ -346,9 +395,14 @@ p.acknowledge {
     padding-right: calc(var(--spacing-base) * 2); /* Space for the arrow */
 }
 
-.dropdown-toggle:hover {
-    background-color: #f0f0f0; /* Slight hover effect */
-    transform: none; /* Override global button hover transform */
+/* 2. Der Hover-Effekt (Exakt deine Werte aus dem Screenshot) */
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    border-color: var(--color-accent-primary);
+    outline: none;
+    box-shadow: 0 0 5px var(--color-accent-primary);
+    
+    transform: none; /* Verhindert, dass er hüpft, falls du das woanders definiert hast */
 }
 
 .dropdown-list {
@@ -392,7 +446,7 @@ p.acknowledge {
 
 
 .dropdown-list li.date-item:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-accent-secondary);
 }
 
 
@@ -498,7 +552,7 @@ section.hanging-pictures {
   border-bottom-right-radius: 0;
   border-radius: calc(var(--border-radius-base) * 8);
   width: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 img {
@@ -542,6 +596,19 @@ img:hover {
 }
 
 
+/* Zielt genau auf die Listen in deiner Info-Sektion */
+.info-section ul li {
+    list-style: none; /* Standard-Browser-Bullets entfernen, da du eigene hast */
+    
+    /* Der Trick für den hängenden Einzug: */
+    padding-left: 0.75rem; /* 1. Schiebt ALLES nach rechts */
+    text-indent: -0.75rem; /* 2. Zieht NUR die erste Zeile wieder nach links */
+    
+    /* Optional: Etwas Abstand zwischen den Zeilen für Lesbarkeit */
+    margin-bottom: 0.5rem; 
+}
+
+
 /* End of Introduction Section Styles */
 
 /* Flex Grid for Info section */
@@ -549,6 +616,14 @@ img:hover {
 .flex-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-base);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: var(--spacing-base);
 }
 
@@ -575,13 +650,16 @@ blockquote p{
 /* Bottom Newsletter Section Styles */
 
 section.newsletter-section-bottom {
-    background-color: var(--color-background-secondary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    /* Deaktivierung der Abrundung der oberen Ecken */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
-/* End of Bottom Newsletter Section Styles */
+    /* Abrundung der oberen Ecken */
+    border-top-left-radius: calc(var(--border-radius-base) * 8);
+    border-top-right-radius: calc(var(--border-radius-base) * 8);
+
+    margin-bottom: 5px;
+}
 
 /* Footer Styles */
 footer {
@@ -606,7 +684,8 @@ footer {
 }
 
 .privacy-section{
-  box-shadow: none;
+  background-color: var(--color-background-secondary);
+  margin: 0;
 }
 
 
@@ -631,6 +710,15 @@ footer {
 
 .quote-text {
   font-style: italic;
+}
+
+.banner {
+  background-color: var(--color-accent-secondary);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: calc(var(--spacing-base) / 2);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
 }
 
 /* --- IMAGE SCROLL ANIMATIONS --- */
@@ -690,17 +778,6 @@ footer {
     width: 100%;
   }
 }
-/* @keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #333;
-  }
-} */
-
-
-/* End of Animation Styles */
 
 
 /* Media Queries for Desktop */
@@ -719,10 +796,6 @@ footer {
 
     }
 
-    .image {
-      z-index: 0;
-    }
-
     section {
       box-shadow: none;
 
@@ -738,15 +811,8 @@ footer {
       max-width: 50%;
     }
 
+    .newsletter-section h1 {
+    font-size: 2rem;
+    }
+
   }
-
-
-.banner {
-  background-color: var(--color-accent-primary);
-  color: var(--color-text-light);
-  text-align: center;
-  padding: calc(var(--spacing-base) / 2);
-  font-weight: var(--font-weight-semibold);
-  margin: 0;
-}
-
