@@ -306,6 +306,15 @@ input[type="email"]:hover {
     box-shadow: 0 0 5px var(--color-accent-primary);
 }
 
+.middle-name {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
 /* End of Global Styles */
 
 

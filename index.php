@@ -34,13 +34,14 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
     <div class="h1-container">
       <h1 class="typewriter">Erinnerung erhalten</h1>
     </div>
-    <p>Wir informieren Sie am Aufführungstag um 12 Uhr, ob die Vorstellung stattfindet.</p>
+    <p>Wir informieren Sie am Aufführungstag um 12:00 Uhr, ob die Vorstellung stattfindet.</p>
     <div class="credentials-box">
       <form class="newsletter-form">
         <label for="name-top">Name:</label>
         <input type="text" id="name-top" name="name" required>
         <label for="email-top">E-Mail:</label>
         <input type="email" id="email-top" name="email" required>
+        <input type="text" name="middle_name" class="middle-name" tabindex="-1" autocomplete="off">
 
         <div class="date-selection">
           <label>Wählen Sie Ihre Vorstellungen:</label>
@@ -110,8 +111,9 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
       <h2>Wo?</h2>
       <ul>
         <li>• <a href="https://maps.app.goo.gl/g2g4BBGDXumMSFyd7" target="_blank" rel="noopener noreferrer">Startpunkt Weier 109g, 3068 Utzigen</a></li>
-        <li>• ÖV empfohlen: Station Aebnit</li>
-        <li>• Wenige Parkplätze beim Pflegeheim Utzigen</li>
+        <li>• ÖV (empfohlen): Station Aebnit</li>
+        <li>• Velo: Beim Startpunkt Platz für Velos</li>
+        <li>• Auto: Wenige Parkplätze beim Pflegeheim Utzigen</li>
         <li>• Jegliches Parkieren ausserhalb ist untersagt.</li>
       </ul>
     </div>
@@ -145,7 +147,7 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
       <img src="assets/images/christina/20250727_160617.jpg" alt="Was Teilnehmer sagen" class="quote-image">
       <p>Christina Schopfer, Tanzlehrerin TanzbeWEGung Boll</p>
        </div>
-       <p class="quote-text">«Tanz erscheint nicht auf der Bühne, sondern mitten im Gehen, im Wind, im Atem. Mich interessiert, wie Bewegung entsteht, wenn wir Raum teilen – mit der Umgebung, mit anderen, mit uns selbst. Es geht nicht um ein Spektakel, sondern um Wahrnehmung: um das Lauschen, das Schauen, das Staunen unterwegs.»</p>
+       <p class="quote-text">«Sowohl beim Unterrichten als auch hier in Utzigen ist es mir ein Herzensanliegen, Kunst gemeinsam zu erschaffen und zu erleben. Draussen in der Natur verbindet der Tanz uns Menschen und lässt den Moment zu einem kleinen Wunder werden.»</p>
    
   </section>
 
@@ -200,13 +202,14 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
     <div>
       <h1>Erinnerung erhalten</h1>
     </div>
-    <p>Wir informieren Sie am Aufführungstag um 12 Uhr, ob die Vorstellung stattfindet.</p>
+    <p>Wir informieren Sie am Aufführungstag um 12:00 Uhr, ob die Vorstellung stattfindet.</p>
     <div class="credentials-box">
       <form class="newsletter-form">
         <label for="name-bottom">Name:</label>
         <input type="text" id="name-bottom" name="name" required>
         <label for="email-bottom">E-Mail:</label>
         <input type="email" id="email-bottom" name="email" required>
+        <input type="text" name="middle_name" class="middle-name" tabindex="-1" autocomplete="off">
 
         <div class="date-selection">
           <label>Wählen Sie Ihre Vorstellungen:</label>

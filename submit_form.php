@@ -6,29 +6,55 @@ header('Content-Type: application/json');
 require_once 'db_config.php';
 
 $allAvailableDates = [
-    '2026-05-01', '2026-05-29', '2026-06-05', '2026-06-12',
-    '2026-06-19', '2026-06-26', '2026-07-03', '2026-08-14',
-    '2026-08-21', '2026-08-28', '2026-09-04', '2026-09-11',
-    '2026-09-18'
+    '2026-05-01', '2026-05-29', '2026-06-05', 
+    '2026-06-19', '2026-06-26', '2026-08-14',
+    '2026-08-21', '2026-08-28', '2026-09-04', 
+    '2026-09-11', '2026-09-18'
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get and sanitize form data
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $selectedDates = $_POST['dates'] ?? [];
-    
-    // NEW: Handle the subscription checkbox value
-    // If the checkbox is checked, $_POST['subscribe_updates'] will be '1'. If not, it won't be set.
     $isSubscribed = isset($_POST['subscribe_updates']) ? 1 : 0;
+
+    // BOT-SCHUTZ: Prüft den getarnten Honeypot
+if (!empty($_POST['middle_name'])) {
+    
+    // 1. Bot-Versuch in der Datenbank registrieren
+    try {
+        $pdo->query("INSERT INTO bot_stats () VALUES ()");
+    } catch (Exception $e) {
+        // Falls das Loggen fehlschlägt, ignorieren wir es lautlos
+    }
+
+    // 2. Den Bot anlügen (Fake Success)
+    echo json_encode(['success' => true, 'message' => 'Vielen Dank für Ihre Anmeldung!']);
+    exit; 
+}
 
     if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Please provide a valid name and email address.']);
+        echo json_encode(['success' => false, 'message' => 'Bitte Name und gültige E-Mail angeben.']);
         exit;
     }
 
-    $datesToInsert = !empty($selectedDates) ? $selectedDates : $allAvailableDates;
+    // 2. KORREKTUR & SICHERHEIT:
+    // Wir nehmen nur Daten an, die AUCH in unserer $allAvailableDates Liste stehen.
+    // Alles andere wird vom Bot/Nutzer ignoriert (array_intersect).
+    if (!empty($selectedDates)) {
+        $datesToInsert = array_intersect($selectedDates, $allAvailableDates);
+    } else {
+        $datesToInsert = $allAvailableDates;
+    }
+
+    // Falls nach der Filterung kein einziges gültiges Datum übrig bleibt:
+    if (empty($datesToInsert)) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Keine gültigen Termine ausgewählt.']);
+        exit;
+    }
+
     $isNewUser = true;
 
     try {
