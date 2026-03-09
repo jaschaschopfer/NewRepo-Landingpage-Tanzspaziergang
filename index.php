@@ -16,7 +16,7 @@ $bannerText = is_readable($bannerFile) ? trim(file_get_contents($bannerFile)) : 
   <link rel="icon" type="image/x-icon" href="assets/icons/" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://use.typekit.net/tdi4xtq.css">
-  <title>Unterwegs</title>
+  <title>unterwegs - TanzbeWEGung Boll</title>
 </head>
 <body>
 
