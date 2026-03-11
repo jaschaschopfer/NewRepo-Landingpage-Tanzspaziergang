@@ -11,9 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ein 120-minütiger Rundgang durch Natur und Schlosspark Utzigen mit Tanz, Live-Musik und Text. Alle Termine und Informationen finden Sie hier." />
     <meta property="og:title" content="unterwegs – Tanzspaziergang Utzigen" />
-    <meta property="og:description" content="Ein 120-minütiger Rundgang durch Natur und Schlosspark Utzigen mit Tanz, Live-Musik und Text. Alle Termine 2026 hier." />
+    <meta property="og:description" content="Ein 120-minütiger Rundgang durch Natur und Schlosspark Utzigen mit Tanz, Live-Musik und Text. Alle Termine und Informationen finden Sie hier." />
     <meta property="og:image" content="assets/images/20250623-DSC_0443.jpg" />
-    <link rel="icon" type="image/x-icon" href="assets/icons/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/tdi4xtq.css">
     <title>unterwegs - TanzbeWEGung Boll</title>
@@ -106,7 +109,7 @@
         <img src="assets/images/20250623-DSC_0056.jpg" alt="Tanzspaziergang Bild 2" class="image animate-picture">
     </section>
 
-    <section class="info-section right-section animated-text-section right-aligned flex-grid">
+    <section id="infos" class="info-section right-section animated-text-section right-aligned flex-grid">
       <div class="info-item location-info">
         <h2>Wo?</h2>
         <ul>
@@ -147,7 +150,7 @@
         <img src="assets/images/christina/20250727_160617.jpg" alt="Was Teilnehmer sagen" class="quote-image">
         <p>Christina Schopfer, Tanzlehrerin TanzbeWEGung Boll</p>
         </div>
-        <p class="quote-text">«Sowohl beim Unterrichten als auch hier in Utzigen ist es mir ein Herzensanliegen, Kunst gemeinsam zu erschaffen und zu erleben. Draussen in der Natur verbindet der Tanz uns Menschen und lässt den Moment zu einem kleinen Wunder werden.»</p>
+        <p class="quote-text">«Sowohl beim Unterrichten als auch hier in Utzigen ist es mir ein Herzensanliegen, Kunst gemeinsam zu erschaffen und zu erleben. Draussen in der Natur verbindet der Tanz, der Text und die Musik uns Menschen und lässt den Moment zu einem kleinen Wunder werden.»</p>
     
     </section>
 
