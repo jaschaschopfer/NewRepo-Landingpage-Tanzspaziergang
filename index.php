@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ein 120-minütiger Rundgang durch Natur und Schlosspark Utzigen mit Tanz, Live-Musik und Text. Alle Termine und Informationen finden Sie hier." />
-    <meta property="og:title" content="unterwegs – Tanz, Musik und Text in Utzigen" />
+    <meta property="og:title" content="unterwegs: Tanz, Musik & Text in Utzigen | TanzbeWEGung Boll" />
     <meta property="og:description" content="Ein 120-minütiger Rundgang durch Natur und Schlosspark Utzigen mit Tanz, Live-Musik und Text. Alle Termine und Informationen finden Sie hier." />
     <meta property="og:image" content="assets/images/20250623-DSC_0443.jpg" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -19,7 +19,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/tdi4xtq.css">
-    <title>unterwegs - Tanz, Musik und Text in Utzigen</title>
+    <title>unterwegs: Tanz, Musik & Text in Utzigen | TanzbeWEGung Boll</title>
   </head>
   <body>
 
