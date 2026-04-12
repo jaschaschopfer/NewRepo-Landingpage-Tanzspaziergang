@@ -65,7 +65,7 @@
   border: none;
 }
 
-:where(p, li, h1, h2, h3, h4, h5, h6) {
+:where(p, li, h1, h2, h3, h4) {
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
@@ -216,6 +216,10 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 a {
@@ -666,9 +670,20 @@ section.newsletter-section-bottom {
 }
 
 /* Footer Styles */
-footer {
-    background-color: var(--color-background-secondary);
+footer{
+  background-color: var(--color-background-secondary);
     padding: var(--spacing-base);
+}
+
+
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-base);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -690,6 +705,10 @@ footer {
 .privacy-section{
   background-color: var(--color-background-secondary);
   margin: 0;
+}
+
+.privacy-link {
+  color: var(--color-accent-primary);
 }
 
 
@@ -817,6 +836,13 @@ footer {
 
     .newsletter-section h1 {
     font-size: 2rem;
+    }
+
+    .sponsors-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-base);
+
     }
 
   }
