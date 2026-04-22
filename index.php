@@ -259,11 +259,11 @@
 
     <footer>
       <div class="footer-top">
-        <div class="sponsors-container">
+        <div class="friends-container">
     
-          <div class="sponsors-section">
+          <div class="friends-section">
             <h5>Unterstützt von</h5>
-            <div class="sponsor-links">
+            <div class="friend-links">
               <a href="https://www.fobe.sid.be.ch/de/start/lotteriefonds.html" target="_blank">Swisslos / Culture Canton de Berne</a> &nbsp;|&nbsp;
               <a href="https://www.vechigen.ch" target="_blank">Gemeinde Vechigen</a> &nbsp;|&nbsp;
               <a href="https://gvb.ch/de/gvb-gruppe/engagement/kulturstiftung.html" target="_blank">GVB Kulturstiftung</a> &nbsp;|&nbsp;
@@ -275,20 +275,19 @@
             </div>
           </div>
 
-          <div class="sponsors-section">
-  <h5>Herzlichen Dank an</h5>
-  <div class="sponsor-links">
-    <a href="https://www.schlossutzigen.ch/" target="_blank">Schloss Utzigen</a> &nbsp;|&nbsp;
-    <a href="https://www.printgraphic.ch" target="_blank">Print Graphic</a> &nbsp;|&nbsp;
-    <a href="https://gerber-busreisen.ch/" target="_blank">Gerber Busreisen</a> &nbsp;|&nbsp;
-    <a href="https://www.ss-vechigen.ch/" target="_blank">Sportschützen Vechigen</a> &nbsp;|&nbsp;
-    <a href="https://www.landivechigen.ch" target="_blank">Landi Vechigen</a> &nbsp;|&nbsp;
-    <a href="https://coffeebreak-laroma.ch/" target="_blank">Coffeebreak l'Aroma</a> &nbsp;|&nbsp;
-    <a href="https://www.natur-stil.ch" target="_blank">Natur-Stil</a> &nbsp;|&nbsp;
-    <a href="https://www.delinat.com/" target="_blank">Delinat</a>
-  </div>
-</div>
-
+          <div class="friends-section">
+            <h5>Herzlichen Dank an</h5>
+            <div class="friend-links">
+              <a href="https://www.schlossutzigen.ch/" target="_blank">Schloss Utzigen</a> &nbsp;|&nbsp;
+              <a href="https://www.printgraphic.ch" target="_blank">Print Graphic</a> &nbsp;|&nbsp;
+              <a href="https://gerber-busreisen.ch/" target="_blank">Gerber Busreisen</a> &nbsp;|&nbsp;
+              <a href="https://www.ss-vechigen.ch/" target="_blank">Sportschützen Vechigen</a> &nbsp;|&nbsp;
+              <a href="https://www.landivechigen.ch" target="_blank">Landi Vechigen</a> &nbsp;|&nbsp;
+              <a href="https://coffeebreak-laroma.ch/" target="_blank">Coffeebreak l'Aroma</a> &nbsp;|&nbsp;
+              <a href="https://www.natur-stil.ch" target="_blank">Natur-Stil</a> &nbsp;|&nbsp;
+              <a href="https://www.delinat.com/" target="_blank">Delinat</a>
+            </div>
+          </div>
         </div>
       </div>
       
