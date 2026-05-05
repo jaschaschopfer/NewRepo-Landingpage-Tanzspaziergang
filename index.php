@@ -126,13 +126,14 @@
           <li>• <a href="#alle-vorstellungen">Mai bis September</a></li>
           <li>• Nur bei schönem Wetter</li> 
           <li>• Allfällige Absagen am Vorstellungstag um 12:00 Uhr</li>
-          <li>• Aktueller Status auf der Webseite oder als E-Mail-Benachrichtigung</li>
+          <li>• Definitiver Status auf der Webseite oder als E-Mail-Benachrichtigung</li>
         </ul>
       </div>
       <div class="info-item additional-info">
         <h2>Weiteres</h2>
         <ul>
           <li>• 120 Minuten Rundgang zu Fuss</li>
+          <li>• Sonnenhut und -brille empfohlen</li>
           <li>• Keine Anmeldung nötig</li>
           <li>• Kollekte</li>
           <li>• Nicht rollstuhlgängig</li>
