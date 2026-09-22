@@ -345,6 +345,7 @@ section.newsletter-section {
 .date-selection {
     max-width: 400px;
     margin: 0 auto;
+    display: none;
 }
 
 .newsletter-form label {

@@ -35,12 +35,12 @@
 
     <section class="newsletter-section animated-text-section" id="top">
       <div class="h1-container">
-        <h1 class="typewriter">Erinnerung erhalten</h1>
+        <h1 class="typewriter">Infomails abonnieren</h1>
       </div>
-      <p>Wir informieren Sie am Aufführungstag um 12:00 Uhr, ob die Vorstellung stattfindet.</p>
+      <p>Tragen Sie ihre E-Mail-Adresse ein, um über kommende Veranstaltungen der TanzbeWEGung Boll informiert zu bleiben. Kein regelmässiger Versand, nur relevante Informationen.</p>
       <div class="credentials-box">
         <form class="newsletter-form">
-          <label for="name-top">Name:</label>
+          <label for="name-top">Vor- und Nachname:</label>
           <input type="text" id="name-top" name="name" required>
           <label for="email-top">E-Mail:</label>
           <input type="email" id="email-top" name="email" required>
@@ -77,7 +77,7 @@
           <!-- NEW: Subscription Checkbox -->
           <div class="subscription-checkbox">
               <label>
-                  <input type="checkbox" name="subscribe_updates" value="1">
+                  <input type="checkbox" name="subscribe_updates" value="1" required>
                   Ja, ich möchte über weitere Veranstaltungen informiert werden.
               </label>
           </div>
@@ -91,8 +91,8 @@
     </section>
 
     <section class="thank-you-section animated-text-section">
-      <h2><span class="typewriter">Erinnerung eingerichtet!</span></h2>
-      <p>Wir freuen uns, Sie bald begrüssen zu dürfen.</p>
+      <h2><span class="typewriter">Infomails abonniert!</span></h2>
+      <p>Wir werden Sie über weitere Veranstaltungen der TanzbeWEGung Boll informieren.</p>
     </section>
 
     <section class="hanging-pictures right">
@@ -133,6 +133,7 @@
         <h2>Weiteres</h2>
         <ul>
           <li>• 120 Minuten Rundgang zu Fuss</li>
+          <li>• Kurzversion (&lt;1km): Einstieg nach 45min ab <a href="https://maps.app.goo.gl/j7xJtf4zGyFDDN5s5" target="_blank" rel="noopener noreferrer">Pflegeheim, Haus E</a></li>
           <li>• Sonnenhut und -brille empfohlen</li>
           <li>• Keine Anmeldung nötig</li>
           <li>• Kollekte</li>
@@ -204,12 +205,12 @@
 
     <section class="newsletter-section newsletter-section-bottom animated-text-section" id="bottom">
       <div>
-        <h1>Erinnerung erhalten</h1>
+        <h1>Infomails abonnieren</h1>
       </div>
-      <p>Wir informieren Sie am Aufführungstag um 12:00 Uhr, ob die Vorstellung stattfindet.</p>
+      <p>Tragen Sie ihre E-Mail-Adresse ein, um über kommende Veranstaltungen der TanzbeWEGung Boll informiert zu bleiben. Kein regelmässiger Versand, nur relevante Informationen.</p>
       <div class="credentials-box">
         <form class="newsletter-form">
-          <label for="name-bottom">Name:</label>
+          <label for="name-bottom">Vor- und Nachname:</label>
           <input type="text" id="name-bottom" name="name" required>
           <label for="email-bottom">E-Mail:</label>
           <input type="email" id="email-bottom" name="email" required>
@@ -246,7 +247,7 @@
           <!-- NEW: Subscription Checkbox -->
           <div class="subscription-checkbox">
               <label>
-                  <input type="checkbox" name="subscribe_updates" value="1">
+                  <input type="checkbox" name="subscribe_updates" value="1" required>
                   Ja, ich möchte über weitere Veranstaltungen informiert werden.
               </label>
           </div>
